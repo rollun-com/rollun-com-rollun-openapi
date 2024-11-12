@@ -26,16 +26,16 @@ docker-build:
 	docker-compose build
 
 composer-install:
-	docker-compose exec rollun-openapi-php-fpm composer install
+	docker-compose exec php-fpm composer install
 
 composer-development-enable:
-	docker-compose exec rollun-openapi-php-fpm composer development-enable
+	docker-compose exec php-fpm composer development-enable
 
 composer-development-disable:
-	docker-compose exec rollun-openapi-php-fpm composer development-disable
+	docker-compose exec php-fpm composer development-disable
 
 composer-test:
-	docker-compose exec rollun-openapi-php-fpm composer test
+	docker-compose exec php-fpm composer test
 
 logstash-logs:
 	docker-compose logs -f -t rollun-openapi-logstash
