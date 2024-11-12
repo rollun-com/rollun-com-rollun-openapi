@@ -7,16 +7,8 @@
 declare(strict_types = 1);
 
 use Psr\Container\ContainerInterface;
-use rollun\callback\Middleware\WebhookMiddleware;
-use rollun\datastore\Middleware\DataStoreApi;
-//use rollun\permission\ConfigProvider;
-//use rollun\permission\OAuth\LoginMiddleware;
-//use rollun\permission\OAuth\LogoutMiddleware;
-//use rollun\permission\OAuth\RedirectMiddleware;
-//use rollun\permission\OAuth\RegisterMiddleware;
 use Mezzio\Application;
 use Mezzio\MiddlewareFactory;
-use Mezzio\Router\Route;
 
 /**
  * Setup routes with a single request method:
@@ -53,42 +45,4 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     $app->get('/',
         \OpenAPI\TestHandler::class,
         'index');
-
-    /*$app->get(
-        '/oauth/redirect',
-        RedirectMiddleware::class,
-        'oauth-redirect'
-    );*/
-
-   /* $app->get(
-        '/oauth/login',
-        LoginMiddleware::class,
-        ConfigProvider::OAUTH_LOGIN_ROUTE_NAME
-    );
-
-    $app->get(
-        '/oauth/register',
-        RegisterMiddleware::class,
-        ConfigProvider::OAUTH_REGISTER_ROUTE_NAME
-    );
-
-    $app->get(
-        '/logout',
-        LogoutMiddleware::class,
-        'logout'
-    );*/
-
-    $app->route(
-        '/api/datastore[/{resourceName}[/{id}]]',
-        DataStoreApi::class,
-        ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-        DataStoreApi::class
-    );
-
-    $app->route(
-        '/api/webhook[/{resourceName}]',
-        WebhookMiddleware::class,
-        Route::HTTP_METHOD_ANY,
-        'webhook'
-    );
 };
