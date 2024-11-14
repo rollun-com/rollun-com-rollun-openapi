@@ -22,7 +22,9 @@ services:
       TEST_MANIFEST_HOST_INDEX: 2
 
   php-openapi-generator:
-    image: maxrollundev/php-openapi-generator:8.0
+    build:
+      context: docker/php-openapi-generator
+      dockerfile: Dockerfile
     volumes:
       - ./:/var/www/app
 
