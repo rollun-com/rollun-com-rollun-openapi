@@ -164,7 +164,7 @@ docker-compose run --rm php-openapi-generator \
 
 ### Запуск генерації без докеру
 
-1. Установите [openapi-generator](https://openapi-generator.tech/) ниже 5й (не включительно). Для проверки выполните команду:
+1. Установите [openapi-generator](https://openapi-generator.tech/) (протестировано на версии 7.9.0). Для проверки выполните команду:
 
    ```openapi-generator version```, в случае когда openapi-generator установлен вы увидите версию генератора.
 
