@@ -168,9 +168,6 @@ docker-compose run --rm php-openapi-generator \
 
    ```openapi-generator version```, в случае когда openapi-generator установлен вы увидите версию генератора.
 
-   **ВЕРСИЯ ГЕНЕРАТОРА ДОЛЖНА БЫТЬ НИЖЕ ПЯТОЙ.** Связанно это с тем что в 5й версии [убрали](https://github.com/OpenAPITools/openapi-generator/pull/8145/commits) 
-   генератор которым мы пользуемся, ему изменили имя и переделали для Laminas вместо Zend.
-
 2. Для генерации кода выполните команду:
 
    ```php vendor/bin/openapi-generator generate:server```
